@@ -62,6 +62,13 @@ def update_post(post_id):
 
     return render_template('update_post.html', post=post)
 
+@main.route('/post/<int:post_id>/delete', methods=['GET','POST'])
+def delete_post(post_id):
+    post = Post.query.get_or_404(workout_id)
+    db.session.delete(workout)
+    db.session.commit()
+    flash('Basket has been deleted!')
+    return redirect(url_for('main.user_posts'))
 
 @main.route('/about')
 def about():
