@@ -33,7 +33,7 @@ Log In Form
 ## Getting Started
 Explore information and resources about the app on the landing page.
 Login or sign up to explore the full features of the app
-https://p2-yummy.herokuapp.com/
+## Not deployed yet
 
 ## Trello board
 https://trello.com/b/ZID4fJUx/build-a-basket#
