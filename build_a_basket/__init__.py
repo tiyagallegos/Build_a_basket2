@@ -7,14 +7,13 @@ from flask import Flask
 def create_app():
     app = Flask(__name__)
 
-#import instance (main/crud) of the blueprint, and register it
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
-
 #import instance (auth) of the blueprint, and register it
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
+    
+#import instance (main/crud) of the blueprint, and register it
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
 
     return app
 

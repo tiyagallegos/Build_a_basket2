@@ -11,12 +11,12 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index(): 
-    return 'Build a Basket!'
+    return render_template('index.html')
 
 @main.route('/profile')
 def profile():
-    return 'View all your posts here!'
+    return render_template('profile.html')
 
 @main.route('/about')
 def about():
-    return 'About Build-A-Basket!'
+    return render_template('about.html')
