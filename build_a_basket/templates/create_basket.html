@@ -13,16 +13,6 @@
       {{ messages[0] }}
     </div>
     {% endif %} {% endwith %}
-    id = db.Column(db.Integer, primary_key=True)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    last_name = db.Column(db.String(60), nullable=False)
-    total_members = db.Column(db.Integer, nullable=False)
-    adults = db.Column(db.Integer, nullable=False)
-    kids = db.Column(db.Integer)
-    location = db.Column(db.String(20), nullable=False)
-    needs = db.Column(db.Text, nullable=False)
-    comments = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     <div class="form-group">
         <label for="comment">Last Name</label>
         <input

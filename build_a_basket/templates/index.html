@@ -6,30 +6,46 @@
 />
 {% endblock %}
 {% block content %} 
-<h1>Hi, User!</h1>
+<h1>Hey, {{ current_user.name }}!</h1>
 <img class="food" src="{{ url_for('static', filename= 'images/cart.jpeg') }}" alt="food basket" width="200px" height="200px" > 
 
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Clothing offered includes 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-    
-    <img class="clothes" src="{{ url_for('static', filename= 'images/clothes.jpeg') }}" alt="clothes basket" width="200px" height="200px" >
-    <img class="toilet" src="{{ url_for('static', filename= 'images/t.jpeg') }}" alt="toiletries basket" width="200px" height="200px" >
+<img class="clothes" src="{{ url_for('static', filename= 'images/clothes.jpeg') }}" alt="clothes basket" width="200px" height="200px" >
+
+<img class="toilet" src="{{ url_for('static', filename= 'images/t.jpeg') }}" alt="toiletries basket" width="200px" height="200px" >
 <h2>Welome to Build-A-Basket! Please add a basket to meet your needs</h2>
-{% endblock %}
+
+<h2> Baskets</h2>
+  {% for post in posts %}
+      <h1>{{ post.last_name }}</h1>
+      <p>Total Family members: {{ post.total_members}}</p>
+      <p>Adults: {{ post.adults}}</p>
+      <p>Kids: {{ post.kids }}</p>
+      <p>Needs: {{ post.needs }}</p>   
+      <p>Location: {{ post.location }}</p>
+      <p>Comments: {{ post.comments }}</p>
+      <p>Date Posted: {{ post.date_posted }}</p>       
+
+            <a
+              href="{{ url_for('main.update_post', post_id=post.id) }}"
+              class="btn btn-outline-primary"
+              role="button"
+            >
+              Edit
+            </a>
+          </td>
+          <td>
+            <a
+              href="{{ url_for('main.delete_post', post_id=post.id) }}"
+              class="btn btn-outline-danger"
+              role="button"
+            >
+              Delete
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endblock %}
+

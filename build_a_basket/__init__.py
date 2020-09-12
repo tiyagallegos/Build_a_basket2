@@ -1,8 +1,9 @@
 #how to run the app FLASK_APP=build_a_basket auto look for create and 
 #initial file that runs on the command flask run
-from flask import Flask, request
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 
@@ -11,6 +12,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
+    migrate = Migrate(app, db)
 #config app
     app.config['SECRET_KEY'] = 'secret-key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'

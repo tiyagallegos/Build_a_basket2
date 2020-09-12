@@ -5,5 +5,41 @@
   href="{{ url_for('static', filename= 'extended_main.css') }}"
 />
 {% endblock %} {% block content %}
-<h1>All Requests</h1>
+<h1>
+    Welcome, {{ user.name }}!
+  </h1>
+  <h1>All Baskets</h1>
+  {% for post in posts %}
+      <h1>{{ post.last_name }}</h1>
+      <p>Total Family members: {{ post.total_members}}</p>
+      <p>Adults: {{ post.adults}}</p>
+      <p>Kids: {{ post.kids }}</p>
+      <p>Needs: {{ post.needs }}</p>   
+      <p>Location: {{ post.location }}</p>
+      <p>Comments: {{ post.comments }}</p>
+      <p>Date Posted: {{ post.date_posted }}</p>       
+  {% endfor %}
+            <a
+              href="{{ url_for('main.update_post', post_id=post.id) }}"
+              class="btn btn-outline-primary"
+              role="button"
+            >
+              Edit
+            </a>
+          </td>
+          <td>
+            <a
+              href="{{ url_for('main.delete_post', post_id=post.id) }}"
+              class="btn btn-outline-danger"
+              role="button"
+            >
+              Delete
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endblock %}
 {% endblock %}

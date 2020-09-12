@@ -1,5 +1,5 @@
 #this file will handle auth
-from flask import Blueprint, render_template, url_for, redirect, request
+from flask import Blueprint, render_template, url_for, redirect, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from .models import User
@@ -47,7 +47,7 @@ def signup_post():
 #generate new instance of user
     new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
-    db.commit()
+    db.session.commit()
 
     return redirect(url_for('auth.login'))
 
