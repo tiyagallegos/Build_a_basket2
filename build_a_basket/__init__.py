@@ -6,6 +6,10 @@ from flask import Flask
 def create_app():
     app = Flask(__name__)
 
+#import instance of the blueprint, and register it
+    from .main import main_blueprint
+    app.register_blueprint(main_blueprint)
+
     return app
 
 
