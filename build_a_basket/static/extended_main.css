@@ -27,29 +27,26 @@ p {
     text-align: justify;
     color: whitesmoke;
 }
-.fa_custom {
-    color: whitesmoke;
-    padding: 10px;
-    }
+
 body {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-items: center;
-    margin-top: 5rem;
-    background-color: cornflowerblue;
- 
   }
   main {
-    padding: 100px;
     display: flex;
-    height: 100vh;
     flex-direction: column;
     align-content: center;
     justify-items: center;
     flex-grow: 1 0 auto;
     background-color: cadetblue;
 }
-.toilet:hover {
-    text
+.signup {
+    color: purple;
+    background-color: lavender;
+    height: 100vh;
+    margin: 15px;
+    padding: 15px;
+    alig
 }
