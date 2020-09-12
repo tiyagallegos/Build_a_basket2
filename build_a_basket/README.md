@@ -8,7 +8,8 @@ get the items they are in need of to improve their quality of life.
 
 ## Technologies: 
 
-```Python, Flask, Jinja2, Bootsrap, Google Fonts, CSS
+```bask
+Python, Flask, Jinja2, Bootsrap, Google Fonts, CSS
 ```
 
 ## Features: 
