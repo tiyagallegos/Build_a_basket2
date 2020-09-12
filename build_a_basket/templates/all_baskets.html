@@ -1,0 +1,9 @@
+
+{% extends "base.html" %} {% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename= 'extended_main.css') }}"
+/>
+{% endblock %} {% block content %}
+<h1>All Requests</h1>
+{% endblock %}
