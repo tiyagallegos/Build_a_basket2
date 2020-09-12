@@ -1,3 +1,35 @@
+{% extends 'base.html' %}
+{% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename= 'extended_main.css') }}"
+/>
+{% endblock %}
+{% block content %} 
+<h1>Hi, User!</h1>
+<img class="food" src="{{ url_for('static', filename= 'images/cart.jpeg') }}" alt="food basket" width="200px" height="200px" > 
 
-    <h1>Home page</h1>
-
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Clothing offered includes 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <img class="clothes" src="{{ url_for('static', filename= 'images/clothes.jpeg') }}" alt="clothes basket" width="200px" height="200px" >
+    <img class="toilet" src="{{ url_for('static', filename= 'images/t.jpeg') }}" alt="toiletries basket" width="200px" height="200px" >
+<h2>Welome to Build-A-Basket! Please add a basket to meet your needs</h2>
+{% endblock %}
